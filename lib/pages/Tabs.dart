@@ -60,12 +60,17 @@ class _TabsState extends State<Tabs> {
             Row(
               children: <Widget>[
                 Expanded(
-                  child: DrawerHeader(
-                    child: Text('头部'),
+                  child: UserAccountsDrawerHeader(
+                    accountName: Text('学习使我快乐'),
+                    accountEmail: Text('123@qq.com'),
+                    currentAccountPicture: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://www.itying.com/images/flutter/2.png'),
+                    ),
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(
-                            'https://www.itying.com/images/flutter/2.png'),
+                            'https://www.itying.com/images/flutter/1.png'),
                         fit: BoxFit.cover,
                       ),
                     ),
