@@ -8,6 +8,7 @@ import '../pages/user/Login.dart';
 import '../pages/user/RegisterFirst.dart';
 import '../pages/user/RegisterSecond.dart';
 import '../pages/user/RegisterThird.dart';
+import '../pages/AppBarDemo.dart';
 
 final routes = <String, WidgetBuilder>{
   '/': (context) => Tabs(),
@@ -17,6 +18,7 @@ final routes = <String, WidgetBuilder>{
   '/registerFirst': (context) => RegisterFirstPage(),
   '/registerSecond': (context) => RegisterSecondPage(),
   '/registerThird': (context) => RegisterThirdPage(),
+  '/appBarDemo': (context) => AppBarDemoPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
