@@ -54,6 +54,55 @@ class _TabsState extends State<Tabs> {
           ),
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: DrawerHeader(
+                    child: Text('头部'),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            'https://www.itying.com/images/flutter/2.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            ListTile(
+              leading: CircleAvatar(
+                child: Icon(
+                  Icons.home,
+                ),
+              ),
+              title: Text('我的空间'),
+            ),
+            Divider(),
+            ListTile(
+              leading: CircleAvatar(
+                child: Icon(
+                  Icons.people,
+                ),
+              ),
+              title: Text('用户中心'),
+            ),
+            Divider(),
+            ListTile(
+              leading: CircleAvatar(
+                child: Icon(
+                  Icons.settings,
+                ),
+              ),
+              title: Text('设置中心'),
+            ),
+            Divider(),
+          ],
+        ),
+      ),
     );
   }
 }
