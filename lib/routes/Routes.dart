@@ -9,6 +9,7 @@ import '../pages/user/RegisterFirst.dart';
 import '../pages/user/RegisterSecond.dart';
 import '../pages/user/RegisterThird.dart';
 import '../pages/AppBarDemo.dart';
+import '../pages/TabBarController.dart';
 
 final routes = <String, WidgetBuilder>{
   '/': (context) => Tabs(),
@@ -19,10 +20,10 @@ final routes = <String, WidgetBuilder>{
   '/registerSecond': (context) => RegisterSecondPage(),
   '/registerThird': (context) => RegisterThirdPage(),
   '/appBarDemo': (context) => AppBarDemoPage(),
+  '/tabBarController': (context) => TabBarControllerPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
-  print('--------------------- ${settings.name}');
   final String name = settings.name;
   final Function pageContentBuilder = routes[name];
 
