@@ -94,6 +94,10 @@ class _TabsState extends State<Tabs> {
                 ),
               ),
               title: Text('用户中心'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/user');
+              },
             ),
             Divider(),
             ListTile(
