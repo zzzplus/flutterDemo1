@@ -10,33 +10,76 @@ class AppBarDemoPage extends StatefulWidget {
 class _AppBarDemoPageState extends State<AppBarDemoPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('AppBarDemoPage'),
-        backgroundColor: Colors.red,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {
-            print('menu');
-          },
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('AppBarDemoPage'),
+          backgroundColor: Colors.red,
+          bottom: TabBar(
+            indicatorColor: Colors.black54,
+            unselectedLabelColor: Colors.white,
+            indicatorSize: TabBarIndicatorSize.label,
+            tabs: <Widget>[
+              Tab(
+                text: 'tab1',
+              ),
+              Tab(
+                text: 'tab2',
+              )
+            ],
+          ),
+          // leading: IconButton(
+          //   icon: Icon(Icons.menu),
+          //   onPressed: () {
+          //     print('menu');
+          //   },
+          // ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                print('search');
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () {
+                print('settings');
+              },
+            ),
+          ],
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {
-              print('search');
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.settings),
-            onPressed: () {
-              print('settings');
-            },
-          ),
-        ],
-      ),
-      body: Center(
-        child: Text('你好 flutter！！！'),
+        body: TabBarView(
+          children: <Widget>[
+            ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text('第一个tab内容'),
+                ),
+                ListTile(
+                  title: Text('第一个tab内容'),
+                ),
+                ListTile(
+                  title: Text('第一个tab内容'),
+                ),
+              ],
+            ),
+            ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text('第二个tab内容'),
+                ),
+                ListTile(
+                  title: Text('第二个tab内容'),
+                ),
+                ListTile(
+                  title: Text('第二个tab内容'),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

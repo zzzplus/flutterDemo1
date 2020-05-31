@@ -12,22 +12,28 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        RaisedButton(
-          child: Text('跳转到搜索页面'),
-          onPressed: () {
-            // Navigator.of(context).push(MaterialPageRoute(
-            //   builder: (context) => SearchPage(),
-            // ));
-            // Navigator.pushNamed(context, '/search');
-            // Navigator.pushNamed(context, '/form', arguments: {'title': '好啦'});
-            Navigator.pushNamed(context, '/registerFirst');
-          },
-        ),
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          RaisedButton(
+            child: Text('跳转到搜索页面'),
+            onPressed: () {
+              // Navigator.of(context).push(MaterialPageRoute(
+              //   builder: (context) => SearchPage(),
+              // ));
+              Navigator.pushNamed(context, '/search');
+            },
+          ),
+          RaisedButton(
+            child: Text('跳转到AppBarDemo'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/appBarDemo');
+            },
+          ),
+        ],
+      ),
     );
   }
 }
