@@ -22,7 +22,9 @@ class _HomePageState extends State<HomePage> {
             // Navigator.of(context).push(MaterialPageRoute(
             //   builder: (context) => SearchPage(),
             // ));
-            Navigator.pushNamed(context, '/search');
+            // Navigator.pushNamed(context, '/search');
+            // Navigator.pushNamed(context, '/form', arguments: {'title': '好啦'});
+            Navigator.pushNamed(context, '/registerFirst');
           },
         ),
       ],
