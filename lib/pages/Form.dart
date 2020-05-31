@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FormPage extends StatefulWidget {
-  final String title;
-  FormPage({this.title = '表单页面', Key key}) : super(key: key);
+  final arguments;
+  FormPage({this.arguments, Key key}) : super(key: key);
 
   @override
   _FormPageState createState() => _FormPageState();
@@ -13,7 +13,7 @@ class _FormPageState extends State<FormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.arguments['title']),
       ),
       body: Column(
         children: <Widget>[

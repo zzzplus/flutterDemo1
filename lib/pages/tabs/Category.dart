@@ -35,7 +35,8 @@ class _CategoryPageState extends State<CategoryPage> {
             //   ),
             // );
 
-            Navigator.pushNamed(context, '/form');
+            // 对象一定要带’
+            Navigator.pushNamed(context, '/form', arguments: {'title': '传递参数aaaaaa'});
           },
         ),
       ],
