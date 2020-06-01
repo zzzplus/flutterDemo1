@@ -8,6 +8,14 @@ class TextFilePage extends StatefulWidget {
 }
 
 class _TextFilePageState extends State<TextFilePage> {
+  var _username = new TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    this._username.text = '设定初始值';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,51 +24,87 @@ class _TextFilePageState extends State<TextFilePage> {
       ),
       body: Padding(
         padding: EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            TextFormField(),
-            SizedBox(height: 20),
-            TextFormField(
-              decoration: InputDecoration(
-                hintText: 'placeholder文本框',
-                border: OutlineInputBorder(),
+        // child: TextFileDemo(),
+        child: Padding(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            children: <Widget>[
+              TextField(
+                controller: this._username,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: '请输入用户名',
+                  labelText: '用户名',
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: '用户名',
-                hintText: 'label文本框',
-                border: OutlineInputBorder(),
+              SizedBox(height: 40),
+              Container(
+                width: double.maxFinite,
+                height: 50,
+                child: RaisedButton(
+                  child: Text('登录'),
+                  color: Colors.blue,
+                  onPressed: () {
+                    print(this._username.text);
+                  },
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            TextFormField(
-              decoration: InputDecoration(
-                icon: Icon(Icons.person),
-                hintText: '图标文本框',
-              ),
-            ),
-            SizedBox(height: 20),
-            TextFormField(
-              maxLines: 4,
-              decoration: InputDecoration(
-                hintText: '多行文本框',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 20),
-            TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: '请输入密码',
-                border: OutlineInputBorder(),
-                labelText: '密码',
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
+    );
+  }
+}
+
+class TextFileDemo extends StatelessWidget {
+  const TextFileDemo({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        TextField(),
+        SizedBox(height: 20),
+        TextField(
+          decoration: InputDecoration(
+            hintText: 'placeholder文本框',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        SizedBox(height: 20),
+        TextField(
+          decoration: InputDecoration(
+            labelText: '用户名',
+            hintText: 'label文本框',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        SizedBox(height: 20),
+        TextField(
+          decoration: InputDecoration(
+            icon: Icon(Icons.person),
+            hintText: '图标文本框',
+          ),
+        ),
+        SizedBox(height: 20),
+        TextField(
+          maxLines: 4,
+          decoration: InputDecoration(
+            hintText: '多行文本框',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        SizedBox(height: 20),
+        TextField(
+          obscureText: true,
+          decoration: InputDecoration(
+            hintText: '请输入密码',
+            border: OutlineInputBorder(),
+            labelText: '密码',
+          ),
+        ),
+      ],
     );
   }
 }
