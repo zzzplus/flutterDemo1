@@ -44,6 +44,12 @@ class _HomePageState extends State<HomePage> {
               Navigator.pushNamed(context, '/buttons');
             },
           ),
+          RaisedButton(
+            child: Text('学生信息登记系统页面'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/formDemo');
+            },
+          ),
         ],
       ),
     );
