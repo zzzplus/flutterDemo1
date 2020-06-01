@@ -10,12 +10,16 @@ class TextFilePage extends StatefulWidget {
 class _TextFilePageState extends State<TextFilePage> {
   var _username = new TextEditingController();
   var _flag;
+  var _sex;
+  bool _switch;
 
   @override
   void initState() {
     super.initState();
     this._username.text = '设定初始值';
     this._flag = false;
+    this._sex = 1;
+    this._switch = true;
   }
 
   @override
@@ -66,9 +70,73 @@ class _TextFilePageState extends State<TextFilePage> {
                 title: Text('一级标题'),
                 subtitle: Text('二级标题'),
                 secondary: Icon(Icons.help),
+                selected: this._flag,
                 onChanged: (value) {
                   setState(() {
                     this._flag = value;
+                  });
+                },
+              ),
+              Divider(),
+              SizedBox(height: 40),
+              Row(
+                children: <Widget>[
+                  Text('男：'),
+                  Radio(
+                    value: 1,
+                    groupValue: this._sex,
+                    onChanged: (value) {
+                      setState(() {
+                        this._sex = value;
+                      });
+                    },
+                  ),
+                  SizedBox(width: 20),
+                  Text('女：'),
+                  Radio(
+                    value: 2,
+                    groupValue: this._sex,
+                    onChanged: (value) {
+                      setState(() {
+                        this._sex = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              RadioListTile(
+                value: 1,
+                groupValue: this._sex,
+                title: Text('一级标题'),
+                subtitle: Text('二级标题'),
+                secondary: Icon(Icons.help),
+                selected: this._sex == 1,
+                onChanged: (value) {
+                  setState(() {
+                    this._sex = value;
+                  });
+                },
+              ),
+              RadioListTile(
+                value: 2,
+                groupValue: this._sex,
+                title: Text('一级标题'),
+                subtitle: Text('二级标题'),
+                secondary: Image.network(
+                  'https://www.itying.com/images/flutter/2.png',
+                ),
+                selected: this._sex == 2,
+                onChanged: (value) {
+                  setState(() {
+                    this._sex = value;
+                  });
+                },
+              ),
+              Switch(
+                value: this._switch,
+                onChanged: (value) {
+                  setState(() {
+                    this._switch = value;
                   });
                 },
               ),
