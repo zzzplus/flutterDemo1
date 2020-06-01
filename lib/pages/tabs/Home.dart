@@ -50,6 +50,12 @@ class _HomePageState extends State<HomePage> {
               Navigator.pushNamed(context, '/formDemo');
             },
           ),
+          RaisedButton(
+            child: Text('DatePickerDemo'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/datePicker');
+            },
+          ),
         ],
       ),
     );
