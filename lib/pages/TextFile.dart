@@ -9,11 +9,13 @@ class TextFilePage extends StatefulWidget {
 
 class _TextFilePageState extends State<TextFilePage> {
   var _username = new TextEditingController();
+  var _flag;
 
   @override
   void initState() {
     super.initState();
     this._username.text = '设定初始值';
+    this._flag = false;
   }
 
   @override
@@ -48,6 +50,27 @@ class _TextFilePageState extends State<TextFilePage> {
                     print(this._username.text);
                   },
                 ),
+              ),
+
+              // Checkbox
+              Checkbox(
+                value: this._flag,
+                onChanged: (value) {
+                  setState(() {
+                    this._flag = value;
+                  });
+                },
+              ),
+              CheckboxListTile(
+                value: this._flag,
+                title: Text('一级标题'),
+                subtitle: Text('二级标题'),
+                secondary: Icon(Icons.help),
+                onChanged: (value) {
+                  setState(() {
+                    this._flag = value;
+                  });
+                },
               ),
             ],
           ),
