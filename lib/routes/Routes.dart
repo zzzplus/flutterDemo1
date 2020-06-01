@@ -12,6 +12,7 @@ import '../pages/AppBarDemo.dart';
 import '../pages/TabBarController.dart';
 import '../pages/user/User.dart';
 import '../pages/Buttons.dart';
+import '../pages/TextFile.dart';
 
 final routes = <String, WidgetBuilder>{
   '/': (context) => Tabs(),
@@ -25,6 +26,7 @@ final routes = <String, WidgetBuilder>{
   '/tabBarController': (context) => TabBarControllerPage(),
   '/user': (context) => UserPage(),
   '/buttons': (context) => ButtonsPage(),
+  '/textFile': (context) => TextFilePage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
