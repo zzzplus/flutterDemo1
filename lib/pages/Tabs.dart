@@ -54,6 +54,30 @@ class _TabsState extends State<Tabs> {
           ),
         ],
       ),
+      floatingActionButton: Container(
+        margin: EdgeInsets.only(bottom: 10),
+        width: 70,
+        height: 70,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40),
+          color: Colors.white,
+        ),
+        child: FloatingActionButton(
+          child: Icon(
+            Icons.add,
+            color: this._currentIndex == 1 ? Colors.white : Colors.black,
+            size: 40,
+          ),
+          elevation: 0,
+          backgroundColor: this._currentIndex == 1 ? Colors.red : Colors.yellow,
+          onPressed: () {
+            setState(() {
+              this._currentIndex = 1;
+            });
+          },
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
