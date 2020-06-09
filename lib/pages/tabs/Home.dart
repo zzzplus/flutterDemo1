@@ -56,6 +56,12 @@ class _HomePageState extends State<HomePage> {
               Navigator.pushNamed(context, '/datePicker');
             },
           ),
+          RaisedButton(
+            child: Text('flutter——swiper'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/swiper');
+            },
+          ),
         ],
       ),
     );

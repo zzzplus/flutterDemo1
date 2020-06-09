@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
+      initialRoute: '/swiper',
       onGenerateRoute: onGenerateRoute,
       theme: ThemeData(primaryColor: Colors.lightBlue),
 
