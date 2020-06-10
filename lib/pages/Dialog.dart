@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'components/MyDialog.dart';
+
 class DialogPage extends StatefulWidget {
   DialogPage({Key key}) : super(key: key);
 
@@ -124,6 +126,18 @@ class _DialogPageState extends State<DialogPage> {
     );
   }
 
+  _showCustomDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return MyDialog(
+          title: '关于我们',
+          content: '内容是什么',
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,6 +165,10 @@ class _DialogPageState extends State<DialogPage> {
               RaisedButton(
                 child: Text('toast'),
                 onPressed: _toast,
+              ),
+              RaisedButton(
+                child: Text('自定义Dialog'),
+                onPressed: _showCustomDialog,
               ),
             ],
           ),
