@@ -17,6 +17,7 @@ import '../pages/FormDemo.dart';
 import '../pages/DatePicker.dart';
 import '../pages/Swiper.dart';
 import '../pages/Dialog.dart';
+import '../pages/Http.dart';
 
 final routes = <String, WidgetBuilder>{
   '/': (context) => Tabs(),
@@ -35,6 +36,7 @@ final routes = <String, WidgetBuilder>{
   '/datePicker': (context) => DatePickerDemo(),
   '/swiper': (context) => SwiperPage(),
   '/dialog': (context) => DialogPage(),
+  '/http': (context) => HttpPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

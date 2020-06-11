@@ -62,6 +62,12 @@ class _HomePageState extends State<HomePage> {
               Navigator.pushNamed(context, '/swiper');
             },
           ),
+          RaisedButton(
+            child: Text('http demo dio'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/http');
+            },
+          ),
         ],
       ),
     );
